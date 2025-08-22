@@ -38,7 +38,7 @@ int main(){
     scanf("%f", &pib1);
 
     printf("Número de Pontos Turísticos: ");
-    scanf("%i", &pontos_turismo1);
+    scanf("%hu", &pontos_turismo1);
 
     // Código Para Solicitar as Informações da Segunda Carta  (CARTA 1)
     printf("\nInformações para o preenchimento da CARTA 2:\n");
@@ -61,7 +61,7 @@ int main(){
     scanf("%f", &pib2);
 
     printf("Número de Pontos Turísticos: ");
-    scanf("%i", &pontos_turismo2);
+    scanf("%hu", &pontos_turismo2);
 
     // Concatenar o caracter do Estado + Código da Carta -> 'A' + '01' = 'A01'
     sprintf(codigo_completo1, "%c%s", estado1, codigo_carta1);
@@ -89,13 +89,13 @@ int main(){
     comp_super_power = super_pwr1 > super_pwr2;
 
     // Printando os resultados
-    printf("Comparação de Cartas:\n");
+    printf("\n\nComparação de Cartas:\n");
 
     // Comparação População
     if (comp_populacao) {printf("População: Carta 1 venceu (%u)\n", comp_populacao);} else {printf("População: Carta 2 venceu (%u)\n", comp_populacao);}
 
     // Comparação Área
-    if (comp_area) {printf("nÁrea: Carta 1 venceu (%u)\n", comp_area);} else {printf("nÁrea: Carta 2 venceu (%u)\n", comp_area);}
+    if (comp_area) {printf("Área: Carta 1 venceu (%u)\n", comp_area);} else {printf("nÁrea: Carta 2 venceu (%u)\n", comp_area);}
 
     // Comparação PIB
     if (comp_pib) {printf("PIB: Carta 1 venceu (%u)\n", comp_pib);} else {printf("PIB: Carta 2 venceu (%u)\n", comp_pib);}
@@ -110,4 +110,8 @@ int main(){
     if (comp_pib_per_capita) {printf("PIB per Capita: Carta 1 venceu (%u)\n", comp_pib_per_capita);} else {printf("PIB per Capita: Carta 2 venceu (%u)\n", comp_pib_per_capita);}
         
     // Comparação Super Poder
-    if (comp_super_power) {printf("Super Poder: Carta 1 venceu (%u)\n", comp_super_power);} else {printf("Super Poder: Carta 2 venceu (%u)\n", comp_super_power);}
+    if (comp_super_power) {
+    printf("Super Poder: Carta 1 venceu (%u)\n", comp_super_power);} else {
+    printf("Super Poder: Carta 2 venceu (%u)\n", comp_super_power);}
+return 0;  
+}
