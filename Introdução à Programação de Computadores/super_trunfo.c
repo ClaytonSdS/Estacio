@@ -15,7 +15,7 @@ int main(){
 
     float super_pwr1, super_pwr2;                   // SuperPoder da Carta
 
-    unsigned int comp_populacao, comp_area, comp_pib, comp_turistico, comp_densidade, comp_pib_per_capita, comp_super_power // Variaveis para comparação
+    unsigned int comp_populacao, comp_area, comp_pib, comp_turistico, comp_densidade, comp_pib_per_capita, comp_super_power; // Variaveis para comparação
 
     // Código Para Solicitar as Informações da Primeira Carta (CARTA 1)
     printf("Informações para o preenchimento da CARTA 1:\n");
