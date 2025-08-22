@@ -4,12 +4,14 @@ int main(){
     char estado1, estado2;                      // Caracter para o Estado
     char codigo_carta1[10], codigo_carta2[10];  // Código da Carta, e.g., 01, 02, etc.
     char cidade1[50], cidade2[50];              // Nome da Cidade
-    int populacao1, populacao2;                 // População
+    unsigned int populacao1, populacao2;                 // População
     float area1, area2;                         // Área em km²
     float pib1, pib2;                           //  PIB do País
-    int pontos_turismo1, pontos_turismo2;       // Número de pontos turisticos
+    unsigned short int pontos_turismo1, pontos_turismo2;       // Número de pontos turisticos
     char codigo_completo1[12], codigo_completo2[12]; // Código Concatenado entre 'estado1' e 'codigo_carta1' -> A01, A02, etc.
 
+    float densidade_p1, densidade_p2;                // Densidade Populacional
+    float pib_capita1, pib_capita2;                  // PIB per Capita
 
     // Código Para Solicitar as Informações da Primeira Carta (CARTA 1)
     printf("Informações para o preenchimento da CARTA 1:\n");
@@ -61,12 +63,20 @@ int main(){
     sprintf(codigo_completo1, "%c%s", estado1, codigo_carta1);
     sprintf(codigo_completo2, "%c%s", estado2, codigo_carta2);
 
+    // Calcular a densidade populacional
+    densidade_p1 = (float) populacao1 / area1;        // Densidade Populacional da Cidade 1
+    densidade_p2 = (float) populacao2 / area2;        // Densidade Populacional da Cidade 2
+    
+    // Calcular o PIB per capita
+    pib_capita1 = (float) pib1 / populacao1;       // PIB per Capita da Cidade 1
+    pib_capita2 = (float) pib2 / populacao2;       // PIB per Capita da Cidade 2
+
     // Print com as Informações da Carta 1
-    printf("\nCarta 1: \nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %f km²\nPIB: %f bilhões de reais\nNúmero de Pontos Turísticos: %i\n \n", 
-                      estado1, codigo_completo1, cidade1, populacao1, area1, pib1, pontos_turismo1);
+    printf("\nCarta 1: \nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f bilhões R$/hab\n", 
+                      estado1, codigo_completo1, cidade1, populacao1, area1, pib1, pontos_turismo1, densidade_p1, pib_capita1);
 
     // Print com as Informações da Carta 2
-    printf("Carta 2: \nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %f km²\nPIB: %f bilhões de reais\nNúmero de Pontos Turísticos: %i\n", 
-                      estado2, codigo_completo2, cidade2, populacao2, area2, pib2, pontos_turismo2);
+    printf("\nCarta 2: \nEstado: %c\nCódigo: %s\nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2f km²\nPIB: %.2f bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f hab/km²\nPIB per Capita: %.2f bilhões R$/hab\n", 
+                      estado2, codigo_completo2, cidade2, populacao2, area2, pib2, pontos_turismo2, densidade_p2, pib_capita2);
 
 }
