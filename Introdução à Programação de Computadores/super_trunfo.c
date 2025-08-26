@@ -13,11 +13,10 @@ int main() {
     float super_pwr1, super_pwr2;                  // Super Poder da Carta
 
     unsigned short int atributo1, atributo2, validacao, resultado1, resultado2; 
-
     unsigned short int resultado_final; // Variavel para armazenar o resultado geral da carta vencedora
 
 
-    float soma_att1, soma_att2; // soma atributos da carta 1 e carta 2
+    float soma_att1=0, soma_att2=0; // soma atributos da carta 1 e carta 2
 
     // Código Para Solicitar as Informações da Primeira Carta (CARTA 1)
     printf("Informações para o preenchimento da CARTA 1:\n");
@@ -286,17 +285,11 @@ int main() {
             return 0;
     }
 
-    /*
-    
-    
-    
-    */
-
-    resultado_final = soma_att1 > soma_att2 ? 1 : 0; // Soma dos atributos da carta 1 > carta 2;
+    resultado_final = soma_att1 > soma_att2 ? 1 : 0; // Soma dos atributos, i.e., carta 1 > carta 2;
 
     // Mostrar as cartas e resultados
     printf("\nCarta 1: %s | Carta 2: %s\n", pais1, pais2);
-    
+
     // Checagem: Vencedor ou Empate
     if (resultado_final){printf("A carta 1 venceu, com uma pontuação de %.2f", soma_att1);}
     else {if (soma_att1 < soma_att2){printf("A carta 2 venceu, com uma pontuação de %.2f", soma_att2);}
